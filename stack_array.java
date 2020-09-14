@@ -1,3 +1,17 @@
+/* in comparison with the linked-list implementation of stack
+ the array implementation in faster in average because there's
+ no need to save the space for pointers at each element.
+  
+ However, depending on which element it is, some operations are 
+ going to be a lot slower than the other because there might be
+ the need to double the size of the array or make the array 2x
+ smaller
+ 
+ therefore, if I want a gurentee of the time each operation takes
+ I should use linked-list, but if I want to average time of the 
+ operations to be fast, I should use the array implementation.
+ */
+
 public class stack_array {
 	
 	private String[] s;
