@@ -29,6 +29,11 @@ public class stack_array {
 	public String pop() {
 		String item = s[--N];
 		s[N] = null;
+		if(N==s.length/4 && N>0) {
+			resize(s.length/2);
+			// N has to be equal to s.length/4 because it would avoid thrashing 
+			// ( when do push-pop many times in a row causes the array to double-half double-half ) )
+		}
 		return item;
 	}
 	
