@@ -48,3 +48,36 @@ public class hello {
 	}
 	
 }
+
+
+// ----------------------------------------------------------------------------------------------------------------------
+/* 
+Unlike the previous version which only works for Strings, this version uses java generics which allows it to work with every data type
+*/
+public class hello<Item> {
+
+	private node first = null;
+	
+	private class node{
+		Item item;
+		node next;
+	}
+	
+	public boolean isEmpty() {
+		return first == null;
+	}
+	
+	public void push(Item item) {
+		node oldfirst = first; 
+		first = new node();
+		first.item = item;
+		first.next = oldfirst;
+	}
+	
+	public Item pop() {
+		Item item = first.item;
+		first = first.next;
+		return item;
+	}
+	
+}
