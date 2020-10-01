@@ -13,8 +13,7 @@ public class CCC_S1 {
 	int number; //number of imputs
 	ArrayList<Integer> time = new ArrayList<Integer>();
 	ArrayList<Integer> distance = new ArrayList<Integer>();
-	int shortest_time = 100000000;
-	int longest_distance = 0;
+	double speed = 0.00;
 	
 	public static void main(String[] args) {
 		
@@ -30,19 +29,16 @@ public class CCC_S1 {
 		
 		for (int i=0; i<a.time.size(); i++) {
 			for (int o=i+1; o<a.time.size(); o++) {
-				int d = Math.abs(a.time.get(o) - a.time.get(i));
-				if(d<a.shortest_time) {
-					a.shortest_time = d;
-				}
-				int e = Math.abs(a.distance.get(o) - a.distance.get(i));
-				if(e>a.longest_distance) {
-					a.longest_distance = e;
+				double d = Math.abs(a.time.get(o) - a.time.get(i));
+				double e = Math.abs(a.distance.get(o) - a.distance.get(i));		
+				if(e/d > a.speed) {
+					a.speed = e/d;
 				}
 				
 			}
 		}
 		
-		System.out.println(a.longest_distance/a.shortest_time);
+		System.out.println(a.speed);
 		
 	}
 	
