@@ -1,6 +1,7 @@
 // Note, "=" operator assigns left reference to right value, the order matters!
 
-/*2020.10.01 it took me 50 minutes for me to finish
+/*2020.10.01 it took me 80 minutes for me to finish
+ *(would be faster tahn 80 minutes in an actual test, this time include chating and other stuff, I would say 60 minutes in an actual test)
  * 2020 senior CCC . S1
  * https://cemc.uwaterloo.ca/contests/computing/2020/ccc/seniorEF.pdf
  */
