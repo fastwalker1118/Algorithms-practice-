@@ -1,3 +1,6 @@
+/*The difference between if and else if 
+ *for else if, if the first if is true, all of the else if s won't be executed,*/
+
 public class Merge_sort {
 
 	public static boolean less(int v, int w) {
