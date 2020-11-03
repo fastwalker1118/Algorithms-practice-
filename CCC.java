@@ -1,8 +1,12 @@
+/* 2018 CCC S1
+ * about 40 minutes to complete
+ * https://www.cemc.uwaterloo.ca/contests/computing/2018/stage%201/seniorEF.pdf
+ */
 import java.util.*; 
 
 public class CCC {
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		ArrayList<Double> al = new ArrayList<Double>();
 		Scanner s = new Scanner(System.in);
@@ -30,6 +34,6 @@ public class CCC {
 			}
 		}
 		System.out.print(last);
-	}*/
+	}
 	
 }
