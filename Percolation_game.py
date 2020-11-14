@@ -45,7 +45,7 @@ def open(row, col): #the parameters are real world indexs / doesn’t include 0
 			unionn((row-1)*length + col - 2,(row-1)*length + col - 1)
 	if (col + 1 <= length) : #the right one
 		if (grid[row-1][col] == True and grid_player2[row-1][col] != True) :
-			unionn((row-1)*length + col - 1,(row-1)*length + col - 2)
+			unionn((row-1)*length + col - 2, (row-1)*length + col - 1)
 	if (row + 1 <= length) : #the below one
 		if (grid[row][col-1] == True and grid_player2[row][col-1] != True) :
 			unionn((row)*length + col - 1,(row-1)*length + col - 1)	
@@ -73,7 +73,7 @@ def percolates():
 	result = 0 #this variable is made to represent the result (1 is true, 2 is false)
 	for j in range(length): #i represents the top level elements in the id array
 		for i in range(length * (length - 1), length*length, 1): #i represents the bottom row elements
-			if(root(i) == j) : #checks if the root of any bottom row elements is one of the top row elements
+			if(root(i) == root(j)) : #checks if the root of any bottom row elements is one of the top row elements
 				result = 1 
 	if(result == 1) : return True
 	else : return False
@@ -83,7 +83,7 @@ def percolates2():
 	result = 0 
 	for j in range(length):
 		for i in range(length * (length - 1), length*length, 1):
-			if(root2(i) == j):
+			if(root2(i) == root(j)):
 				h = 1
 	if(result ==1) : return True
 	else : return False
@@ -96,6 +96,7 @@ id_player2 = []
 grid = [] 
 #I made this array for player 2 becasue the percolation2 function needs a different array
 grid_player2 = [] 
+
 
 #prints out the instructions
 print("hello, this is a 2 player game is called percolation, there is going to be a n*n grid all blocked initially")
@@ -161,6 +162,8 @@ while(True): #creates a infinite loop unless break keyword appears
 				print('o  ', end='')
 		print()
 
+	print(id)
+
 	#checks is the block percolates yet
 	if(percolates() == True): 
 		print("congratulation player 1, you win!")
@@ -172,6 +175,7 @@ while(True): #creates a infinite loop unless break keyword appears
 	col2 = int(input()) #takes player2's colume number as input and assign it to col2 variable
 	open2(row2,col2) #calls the open2 function with row and col variable as arguments to open the grid
 
+	print(id_player2)
 	#checks if player2's block percolates
 	if(percolates2() == True):
 		print("congratulation player 2, you win!")
@@ -187,4 +191,3 @@ while(True): #creates a infinite loop unless break keyword appears
 	if (count == length*length and percolates() == False and percolates2() == False):
 		print("it's a tie!")
 		break #breaks the loop
-
