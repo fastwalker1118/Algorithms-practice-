@@ -44,3 +44,44 @@ public class CCC_S1 {
 	}
 	
 }
+
+
+/* the solution above will only get 7/15 points as it has O^2 time complexity 
+ *this solution is a lot faster
+ */
+
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		double speed = 0.00;
+		
+		Scanner s = new Scanner(System.in);
+		int number = s.nextInt();
+		int[][] temp = new int[number][2];
+		
+		for (int i=0; i<number; i++) {
+			temp[i][0] = s.nextInt();
+			temp[i][1] = s.nextInt();
+		}
+		
+		Arrays.sort(temp, (b, a) -> Integer.compare(b[0], a[0]));
+
+		double count = 0.0;
+		
+		for (int i = 1 ; i < number; i++) {
+			double a = temp[i][0] - temp[i-1][0];
+			double b = temp[i][1] - temp[i-1][1];
+			double result = Math.abs(b/a);
+			if (result > count) {
+				count = result;
+			}
+		}
+
+		System.out.println(count);
+	}
+	
+}
+
