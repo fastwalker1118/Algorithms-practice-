@@ -1,1 +1,2 @@
-# girls-are-greatt
+# Algorithms
+
